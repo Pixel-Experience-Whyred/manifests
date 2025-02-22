@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="twistui"
+           fetch="https://github.com/TwistUI"
+           revision="13" />
+
+<project path="frameworks/base" name="frameworks_base" remote="twistui" />
+<project path="system/core" name="system_core" remote="twistui" />
+<project path="build/soong" name="build_soong" remote="twistui" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+<project path="packages/apps/Settings" name="packages_apps_Settings" remote="twistui" />
+<project path="vendor/aosp" name="vendor_aosp" remote="twistui" />
+<project path="packages/apps/Updates" name="packages_apps_Updates" remote="twistui" />
+
+</manifest>
