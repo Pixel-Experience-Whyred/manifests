@@ -11,6 +11,10 @@
   <remote name="gitlab"
           fetch="https://gitlab.com" />
 
+  <remote name="twistui"
+           fetch="https://github.com/TwistUI"
+           revision="13" />
+
   <default revision="refs/tags/android-13.0.0_r75"
            remote="aosp"
            sync-j="4"
@@ -1211,5 +1215,8 @@
   <include name="snippets/pixel.xml" />
   <include name="snippets/pixel-extras.xml" />
   <include name="snippets/pixel-caf.xml" />
+
+  <!-- Add all TwistUI repos -->
+  <include name="snippets/twistui.xml" />
 
 </manifest>

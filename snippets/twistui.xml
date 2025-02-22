@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <remote name="twistui"
+           fetch="https://github.com/TwistUI"
+           revision="13" />
+
+<project path="frameworks/base" name="frameworks_base" remote="twistui" />
+<project path="system/core" name="system_core" remote="twistui" />
+<project path="build/soong" name="build_soong" remote="twistui" >
+    <linkfile src="root.bp" dest="Android.bp" />
+    <linkfile src="bootstrap.bash" dest="bootstrap.bash" />
+  </project>
+<project path="packages/apps/Settings" name="packages_apps_Settings" remote="twistui" />
+<project path="vendor/aosp" name="vendor_aosp" remote="twistui" />
+<project path="packages/apps/Updates" name="packages_apps_Updates" remote="twistui" />
+<project path="external/faceunlock" name="external_faceunlock" remote="twistui" />
+<project path="vendor/gms" name="vendor_gms" remote="twistui" clone-depth="1" />
+<project path="build/make" name="build" remote="twist">
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+
+</manifest>
