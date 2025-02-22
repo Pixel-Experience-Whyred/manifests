@@ -1,15 +1,18 @@
-# Pixel Experience #
+# TwistUI #
 
-### Sync ###
-
-```bash
-
-# Initialize local repository
-repo init -u https://github.com/PixelExperience/manifest -b thirteen-plus
-
-# Sync
-repo sync -c -j$(nproc --all) --force-sync --no-clone-bundle --no-tags
-```
+## Initialization and Syncing:
+1. Initialize your local repository:
+    ```bash
+    repo init --no-repo-verify --git-lfs -u https://github.com/TwistUI/manifests.git -b 13 -g default,-mips,-darwin,-notdefault
+    ```
+   Or If you wish to save some system space and don't care about repo history depths:
+    ```bash
+    repo init --depth=1 --no-repo-verify --git-lfs -u https://github.com/TwistUI/manifests.git -b 13 -g default,-mips,-darwin,-notdefault
+    ```
+2. Sync up with the remote repository:
+    ```bash
+    repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
+    ```
 
 ### Build ###
 
@@ -22,11 +25,14 @@ $ . build/envsetup.sh
 $ lunch aosp_$device-userdebug
 
 # Build the code
-$ mka bacon -jX
+$ mka bacon -j$(nproc --all)
 ```
 
-### Submitting Patches ###
+### A rom based on Pixel Experience Thirteen ###
 
-Patches are always welcome! Please submit your patches to our Gerrit.
+### Credits ###
 
-[Gerrit push guide](https://wiki.pixelexperience.org/help/submit-patch/)
+- Pixel Experience
+- Omni Rom
+- Project Matrixx
+- crDroid
